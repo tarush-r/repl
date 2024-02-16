@@ -1,15 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import CodeInput from "./components/CodeInput/CodeInput";
+import "./App.css";
+import History from "./components/HistoryList/HistoryList";
 
 // {
 //   "code": "// alice refers to bob and bob refers to back alice!\n
 //               var alice = { name: 'Alice', follows: [] };\n
 //               var bob = { name: 'Bob', follows: [alice] };\n
-//               alice.follows.push(bob); 
+//               alice.follows.push(bob);
 //               alice;",
 //   "sessionId": "aab9f3ba-7465-4319-820b-555b2e15433d"
 // }
 
+// alice refers to bob and bob refers to back alice!\n
+// var alice = { name: 'Alice', follows: [] };
+// var bob = { name: 'Bob', follows: [alice] };
+// alice.follows.push(bob);
+// alice;
 
 // {
 //   "root": "5e04a0ec-be54-4908-81b1-d6b076b6a4ef",
@@ -71,11 +77,11 @@ import './App.css';
 //   }
 // }
 
-
 function App() {
   return (
-    <div className="App">
-      
+    <div className="app">
+      <History />
+      <CodeInput />
     </div>
   );
 }
