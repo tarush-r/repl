@@ -1,8 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import parseResponse from "../../utils/utils";
-import Data from "../../models/Data";
-// import Data from "../../classes/Data";
 
 const initialState = {
   history: [],
@@ -13,21 +11,15 @@ const replSlice = createSlice({
   initialState,
   reducers: {
     addToHistory: (state, action) => {
-      //     console.log('printing inside redux ', action.payload)
         state.history.push(action.payload);
     },
   },
   extraReducers: (builder) => {
     builder
       .addCase(executeOnServer.pending, (state) => {
-        console.log("fetching API");
       })
       .addCase(executeOnServer.fulfilled, (state, action) => {
-        
-        console.log("API FULLFILLED: ", action.payload);
         var parsedObj = parseResponse(action.payload)
-        // let dataObj = new Data(1, parsedObj)
-        console.log("pushing in state: ", parsedObj)
         state.history.push(parsedObj);
       });
   },

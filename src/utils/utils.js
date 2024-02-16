@@ -47,21 +47,17 @@ const convertToObj = (data, key, seen) => {
 };
 
 const parseResponse = (serialized) => {
-  console.log("here ", serialized);
-  const objMap = {};
   let original = serialized;
   serialized = serialized.serialized;
-  console.log("here ", serialized);
 
   const rootKey = original.root;
-  console.log("root key ", rootKey);
 
   if (serialized[rootKey]["type"] == "error") {
     var errorData = serialized[rootKey]["value"];
     // console.log
     var dataValue = `${errorData["name"]} : ${errorData["message"]}`;
     var dataObj = new Data(0, dataValue);
-    return stringify(dataObj);
+    return dataObj;
   }
 
   var res = convertToObj(serialized, rootKey, {});
