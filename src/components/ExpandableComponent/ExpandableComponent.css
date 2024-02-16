@@ -11,4 +11,23 @@
   .transparent-container {
     background-color: transparent;
   }
+
+  .arrows {
+    scale: 0.8;
+    margin-left: 2px;
+  }
+
+  .type {
+    /* color: red; */
+  }
+
+  .keys {
+    color: blue;
+    white-space: pre-wrap;
+  }
+
+  .vals {
+    color: maroon;
+    white-space: pre-wrap;
+  }
   

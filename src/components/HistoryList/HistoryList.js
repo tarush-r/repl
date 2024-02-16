@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import HistoryItem from "../HistoryItem/HistoryItem";
 import ExpandableComponent from "../ExpandableComponent/ExpandableComponent";
+import { parse } from "flatted";
 
 function History() {
   const historyList = useSelector((state) => state.repl.history);
@@ -12,11 +13,15 @@ function History() {
         {
           console.log(dataObj.type == 1);
           if (dataObj.type == 0) {
-            return;
-            <HistoryItem key={index} dataObj={dataObj} />;
+            return <HistoryItem key={index} dataObj={dataObj} />;
             // return (<UserInput value={dataObj.value}/>);
           } else {
-            return <ExpandableComponent key={index} object={dataObj.value} />;
+            return (
+              <div className="container">
+                <span className="input-prefix">&lt;</span>
+                <ExpandableComponent key={index} object={dataObj.value} />
+              </div>
+            );
           }
           //   else if (dataObj.type == 1) {
           //     return (

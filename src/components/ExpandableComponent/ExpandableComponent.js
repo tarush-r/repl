@@ -6,7 +6,7 @@ import ReactCodeMirror from "@uiw/react-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
 
 const ExpandableComponent = ({ object }) => {
-  console.log("inside expandable obje ", object);
+  console.log("inside expandable obje ", object, " ", typeof object);
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggle = () => {
@@ -17,27 +17,33 @@ const ExpandableComponent = ({ object }) => {
     console.log("Trying to render");
     return Object.keys(obj).map((key) => (
       <div key={key} style={{ display: "flex" }}>
-        <pre style={{ whiteSpace: "pre-wrap" }}>{key}: </pre>
+        <div className="keys">{key}: </div>
         {typeof obj[key] === "object" ? (
           <ExpandableComponent object={obj[key]} />
+        ) : typeof obj[key] === "string" ? (
+          <div className="vals">"{obj[key]}"</div>
         ) : (
-          <pre style={{ whiteSpace: "pre-wrap" }}>{obj[key]}</pre>
+          <>
+            <div className="vals">{obj[key]}</div>
+          </>
         )}
       </div>
     ));
   };
 
   return (
-    <pre style={{ marginLeft: 0, whiteSpace: "pre-wrap" }}>
+    <div style={{ marginLeft: 0, whiteSpace: "pre-wrap" }}>
       <div
         style={{ display: "flex", alignItems: "center", cursor: "pointer" }}
         onClick={handleToggle}
       >
-        <span style={{ marginLeft: 5 }}>Object</span>
-        <span>{isOpen ? "▼" : "►"}</span>
+        <span className="type" style={{ marginLeft: 5 }}>
+          {Array.isArray(object) ? "Array" : "Object"}
+        </span>
+        <span className="arrows">{isOpen ? "▼" : "►"}</span>
       </div>
       {isOpen && <div style={{ marginLeft: 20 }}>{renderObject(object)}</div>}
-    </pre>
+    </div>
   );
 };
 
