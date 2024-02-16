@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addToHistory, executeOnServer } from "../../state/repl/replSlice";
 import "./CodeInput.css";
@@ -6,17 +6,16 @@ import ReactCodeMirror from "@uiw/react-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
 import Data from "../../models/Data";
 
-
 const CodeInput = () => {
   const dispatch = useDispatch();
   const [inputValue, setInputValue] = useState("");
 
   const dispatchAction = () => {
-    if(inputValue == "") {
-        return;
+    if (inputValue == "") {
+      return;
     }
     dispatch(executeOnServer(inputValue));
-    var userInput = new Data(0, inputValue)
+    var userInput = new Data(0, inputValue);
     dispatch(addToHistory(userInput));
     setInputValue("");
   };
@@ -36,7 +35,6 @@ const CodeInput = () => {
   return (
     <div className="container">
       <span className="input-prefix">&gt;</span>
-      {/* <input className="input" ref={inputRef} onKeyDown={handleKeyPress} /> */}
       <ReactCodeMirror
         className="input"
         extensions={[javascript({ jsx: true })]}

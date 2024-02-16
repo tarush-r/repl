@@ -3,9 +3,7 @@ import "./HistoryItem.css";
 import ReactCodeMirror from "@uiw/react-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
 
-const HistoryItem = ({ dataObj}) => {
-  // console.log('printing history item')
-  let item = "hello";
+const HistoryItem = ({ dataObj }) => {
   return (
     <div className="container">
       <span className="input-prefix">&lt;</span>

@@ -1,14 +1,7 @@
 .container {
   width: auto;
-
-  /* margin: 0 auto; */
-
   padding: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   margin: 10px 10px 10px 10px;
   background-color: white;
 }
-/* 
-.input-prefix {
-  scale: 0.6;
-} */

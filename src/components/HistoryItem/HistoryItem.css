@@ -1,32 +1,12 @@
 .container {
-    width: auto;
-  
-    /* margin: 0 auto; */
-    
-    padding: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    margin: 10px 10px 10px 10px;
-    background-color: white;
-  }
-  
-  /* .cm-editor { border: none } */
-  .cm-editor.cm-focused {
-    border: none;
-    outline: none;
-  }
-  
-  /* .input-prefix {
-    scale: 0.6;
-  } */
-  
-  /* .cm-content {
-      background-color: rgba(255, 255, 255, 0.5);
-      backdrop-filter: blur(10px); 
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  } */
-  
-  /* .cm-content .cm-line {
-      background-color: transparent;
-  }  */
-  
-  
+  width: auto;
+  padding: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin: 10px 10px 10px 10px;
+  background-color: white;
+}
+
+.cm-editor.cm-focused {
+  border: none;
+  outline: none;
+}
