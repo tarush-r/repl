@@ -7,7 +7,7 @@
 ## Description
 
 <p>
-A read eval print loop that displays different data types and cicular objects in a readable format
+A read eval print loop that displays different data types and circular objects in a readable format
 </p>
 
 <img src="https://github.com/tarush-r/repl/blob/main/photos/1.png">
@@ -26,6 +26,6 @@ npm start
 ### Tech stack
 
 `Implemented with` : React <br>
-`Language` : Javascript <br>
+`Language` : JavaScript <br>
 
 <h3 align="center"><b>Developed with :heart: by <a href="https://github.com/tarush-r">Tarush</a> </b></h3>
