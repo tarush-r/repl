@@ -16,7 +16,11 @@ A read eval print loop that displays different data types and cicular objects in
 #### How to Run-
 
 ```html
-npm i npm start
+npm i
+```
+
+```html
+npm start
 ```
 
 ### Tech stack
